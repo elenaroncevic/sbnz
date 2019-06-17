@@ -1,0 +1,21 @@
+<!-- dodati u table tag *ngIf="!loading" --> 
+<table >
+  <tr>
+    <th>type</th>
+    <th>status</th>
+    <th>machine Id</th>
+    <th>user</th>
+    <th>time</th>
+    <th>text</th>
+  </tr>
+  <tr *ngFor="let log of logs">
+    <td>{{log.type}}</td>
+    <td>{{log.status}}</td>
+    <td>{{log.machineId}}</td>
+    <td>{{log.userUsername}}</td>
+    <td>{{log.time}}</td>
+    <td>{{log.text}}</td>
+  </tr>
+</table>
+
+
