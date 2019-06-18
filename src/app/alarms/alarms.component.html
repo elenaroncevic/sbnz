@@ -1,3 +1,20 @@
-<p>
-  alarms works!
-</p>
+<!-- dodati u table tag *ngIf="!loading" --> 
+<table >
+    <tr>
+      <th>type</th>
+      <th>machine Id</th>
+      <th>user</th>
+      <th>time</th>
+      <th>text</th>
+    </tr>
+    <tr *ngFor="let alarm of alarms">
+      <td>{{alarm.type}}</td>
+      <td>{{alarm.machineId}}</td>
+      <td>{{alarm.userUsername}}</td>
+      <td>{{alarm.time | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+      <td>{{alarm.text}}</td>
+    </tr>
+  </table>
+  <br/>
+  <br/>
+  
