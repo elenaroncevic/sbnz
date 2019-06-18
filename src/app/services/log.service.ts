@@ -11,14 +11,8 @@ export class LogService {
 
   getLogs() : Log[] { //: Observable<Log[]> {}
     /* return
-        this.httpClient.get<Log[]>("neki url")
-        .subscribe(
-            data => {
-                this.logged = data as User;
-                localStorage.setItem("logged", JSON.stringify(this.logged));
-                this.router.navigate(['/home']);
-            }
-        );  */
+        this.httpClient.get<Log[]>("neki url");
+    */
     return LOGS;  //ovo zakomentarisati
   }
 }
