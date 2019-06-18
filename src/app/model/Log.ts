@@ -4,19 +4,20 @@ export class Log{
     id : number;
 	type : string;
     status : string;
-	machineId : number;
+	machineIp : number;
 	userUsername : string;
 	time : Date;
-	text : string;
+    text : string;
+    informationSystem: string;
 
 }
 
 
 
 export const LOGS: Log[]=  [
-    { id: 11, type: 'obican', status : 'bezopasan', machineId: 1, userUsername: 'ee', time: new Date(), text: 'neki tekst' },
-    { id: 11, type: 'obican', status : 'bezopasan', machineId: 1, userUsername: 'a', time: new Date(), text: 'neki tekst' },
-    { id: 11, type: 'obican', status : 'bezopasan', machineId: 2, userUsername: 'ee', time: new Date(), text: 'neki tekst' },
-    { id: 11, type: 'obican', status : 'bezopasan', machineId: 2, userUsername: 'eae', time: new Date(), text: 'neki tekst' }
+    { id: 11, type: 'obican', status : 'bezopasan', machineIp: 1, informationSystem: 'neki', userUsername: 'ee', time: new Date(), text: 'neki tekst' },
+    { id: 11, type: 'obican', status : 'bezopasan', machineIp: 1, informationSystem: 'neki', userUsername: 'a', time: new Date(), text: 'neki tekst' },
+    { id: 11, type: 'obican', status : 'bezopasan', machineIp: 2, informationSystem: 'neki', userUsername: 'ee', time: new Date(), text: 'neki tekst' },
+    { id: 11, type: 'obican', status : 'bezopasan', machineIp: 2, informationSystem: 'neki', userUsername: 'eae', time: new Date(), text: 'neki tekst' }
 
   ];

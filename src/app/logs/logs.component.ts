@@ -20,13 +20,14 @@ export class LogsComponent implements OnInit {
 
   logTypes = ["Login","VirusThreat", "ThreatEliminated", "Information"];
   logStatus = ["Ok", "Warning", "Error"];
+  informationSystems = ["PaymentSystem", "SecuritySystem", "PrivacySystem", "All"];
  // loading : true;
  
   constructor(private logService: LogService) { }
  
   ngOnInit() {
     this.getLogs();
-    this.log = {type:null, status:null, text: null, time:null, id:null, machineId:null, userUsername: null};
+    this.log = {type:null, status:null, text: null, time:null, id:null, machineIp:null, informationSystem: null, userUsername: null};
     console.log(this.log);
   }
  
