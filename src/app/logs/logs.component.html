@@ -4,6 +4,7 @@
     <th>type</th>
     <th>status</th>
     <th>machine Id</th>
+    <th>Information System</th>
     <th>user</th>
     <th>time</th>
     <th>text</th>
@@ -11,7 +12,8 @@
   <tr *ngFor="let log of logs">
     <td>{{log.type}}</td>
     <td>{{log.status}}</td>
-    <td>{{log.machineId}}</td>
+    <td>{{log.machineIp}}</td>
+    <td>{{log.informationSystem}}</td>
     <td>{{log.userUsername}}</td>
     <td>{{log.time | date:'dd/MM/yyyy HH:mm:ss'}}</td>
     <td>{{log.text}}</td>
@@ -23,7 +25,7 @@
   <br/>
   Search trough database <input type="checkbox" name="databaseCB" [(ngModel)]="this.database">
   <br/>
-  Search with regex: <input type="checkbox" name="regexCB" [(ngModel)]="this.regex">
+  Search text field with regex: <input type="checkbox" name="regexCB" [(ngModel)]="this.regex">
   <br/>
 </div>
 
@@ -39,7 +41,7 @@
       </option>
   </select>
   <br/>
-
+<br/>
   status: 
   <select name="status" [(ngModel)]="this.log.status">
       <option *ngFor="let status of logStatus" [ngValue]="status">  
@@ -47,12 +49,27 @@
       </option>
   </select>
   <br/>
+  <br/>
 
   time: <input type="datetime-local" [(ngModel)]="log.time"/>
   <br/>
+  <br/>
+
   user: <input type="text" [(ngModel)]="log.userUsername"/>
   <br/>
-  machine (id): <input type = "number" [(ngModel)]="log.machineId"/>
+  <br/>
+
+  machine ip: <input type = "number" [(ngModel)]="log.machineIp"/>
+  <br/>
+  <br/>
+
+  information system: <select name="informationSystem" [(ngModel)]="this.log.informationSystem">
+    <option *ngFor="let is of informationSystems" [ngValue]="is">  
+        {{is}}
+    </option>
+</select>
+<br/><br/>
+  text:  <input type="text" [(ngModel)]="log.text"/>
 </div>
 <button type="button" (click)="search()">Search</button>
 
