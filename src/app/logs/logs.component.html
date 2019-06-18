@@ -17,5 +17,45 @@
     <td>{{log.text}}</td>
   </tr>
 </table>
+<br/>
+<br/>
+<div >
+  <br/>
+  Search trough database <input type="checkbox" name="databaseCB" [(ngModel)]="this.database">
+  <br/>
+  Search with regex: <input type="checkbox" name="regexCB" [(ngModel)]="this.regex">
+  <br/>
+</div>
+
+<div *ngIf="this.regex">
+  regex: <input type = "text" [(ngModel)]="regexText" width="90%">
+</div>
+<br/>
+<div *ngIf="!this.regex">
+  type: 
+  <select name="type" [(ngModel)]="this.log.type">
+      <option *ngFor="let type of logTypes" [ngValue]="type">  
+          {{type}}
+      </option>
+  </select>
+  <br/>
+
+  status: 
+  <select name="status" [(ngModel)]="this.log.status">
+      <option *ngFor="let status of logStatus" [ngValue]="status">  
+          {{status}}
+      </option>
+  </select>
+  <br/>
+
+  time: <input type="datetime-local" [(ngModel)]="log.time"/>
+  <br/>
+  user: <input type="text" [(ngModel)]="log.userUsername"/>
+  <br/>
+  machine (id): <input type = "number" [(ngModel)]="log.machineId"/>
+</div>
+<button type="button" (click)="search()">Search</button>
+
+
 
 
